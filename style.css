@@ -1,0 +1,378 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'Clean_bold';
+    src: url('/fonts/Clean_Bold.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'Clean_light';
+    src: url('/fonts/Clean_Light.otf') format('opentype')
+}
+
+@font-face {
+    font-family: 'Clean_medium';
+    src: url('/fonts/Clean_Medium.otf') format('opentype')
+}
+
+@keyframes fadeInOpacity {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #111;
+    color: white;
+}
+
+header {
+    position: relative;
+    z-index: 1;
+    height: 50px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.hero {
+    margin-top: -70px;
+    position: relative;
+    height: 80vh;
+    background-image: url("media/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.heroText {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 25%;
+    top: 50%;
+    ;
+}
+
+.heroText h1 {
+    font-family: Clean_light;
+    font-size: 50px;
+    letter-spacing: 2px;
+}
+
+.heroText h2 {
+    font-family: Clean_light;
+    font-size: 18px;
+    letter-spacing: 2px;
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+
+.heroText button {
+    background: rgb(255, 255, 255);
+    border: 2px solid #fff;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    border-radius: 25px;
+    letter-spacing: 3px;
+    height: 2.7rem;
+    width: 12rem;
+    font-family: Clean_medium;
+}
+
+.heroText button:hover {
+    background: rgba(255, 255, 255, 0.466);
+    border: 2px solid rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: Clean_medium;
+    cursor: pointer;
+}
+
+main {
+    position: relative;
+}
+
+.contentTitle {
+    text-align: center;
+    font-family: Clean_bold;
+    padding-top: 40px;
+    font-size: 25px;
+}
+
+main #content {
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-overflow: ellipsis;
+}
+
+main #content article img:hover {
+    cursor: pointer;
+    opacity: 0.8;
+
+}
+
+main #content article h2:hover {
+    cursor: pointer;
+    color: rgb(167, 167, 167);
+}
+
+main #content img {
+    width: 275px;
+    height: 400px;
+}
+
+
+main #content article {
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    font-family: Clean_light;
+    font-size: 13px;
+}
+
+.detailWindow {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.795);
+}
+
+.detailContent {
+    color: rgb(255, 255, 255);
+    background-color: rgb(8, 8, 8);
+    margin: 10% auto;
+    font-family: Clean_light;
+    padding: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.445);
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    opacity: 1;
+    animation-name: fadeInOpacity;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 0.3s;
+    grid-template-areas:
+        ". . . close"
+        "poster info trailer trailer"
+}
+
+.poster {
+    grid-area: poster;
+    padding: 10px;
+}
+
+.info {
+    grid-area: info;
+    padding: 10px;
+}
+
+.info h2 {
+    font-size: 30px;
+}
+
+.trailer {
+    grid-area: trailer;
+    border: 1px solid rgb(165, 165, 165);
+    margin: 10px;
+}
+
+.plot h3 {
+    font-size: 20px;
+}
+
+.trailer iframe {
+    border-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.close {
+    grid-area: close;
+    color: rgb(255, 255, 255);
+    z-index: 999;
+    margin-top: -50px;
+    margin-right: -31px;
+    font-size: 50px;
+    justify-self: end;
+    height: 0px;
+}
+
+.close:hover {
+    cursor: pointer;
+    color: rgb(167, 167, 167);
+}
+
+@media only screen and (max-width: 1025px) {
+
+    .hero {
+        margin-top: -70px;
+        position: relative;
+        height: 80vh;
+        background-image: url("media/hero.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: center;
+
+    }
+    
+    .heroText {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+    
+    .heroText h1 {
+        font-family: Clean_light;
+        font-size: 50px;
+        letter-spacing: 2px;
+    }
+
+    .detailWindow {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.795);
+    }
+
+    .detailContent {
+        color: rgb(255, 255, 255);
+        background-color: rgb(8, 8, 8);
+        margin: 10% auto;
+        font-family: Clean_light;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.445);
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0px 0px;
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 0.3s;
+        grid-template-areas:
+            "close close close"
+            "poster info info"
+            "trailer trailer trailer"
+    }
+
+    
+.poster {
+    grid-area: poster;
+    padding: 10px;
+}
+
+.trailer iframe {
+    border-style: none;
+    width: 100%;
+    height: 450px;
+}
+
+  }
+
+  @media only screen and (max-width: 769px) {
+
+    .hero {
+        margin-top: -70px;
+        position: relative;
+        height: 100vh;
+        background-image: url("media/hero.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-x: -550px;
+
+    }
+    
+    .heroText {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+    }
+    
+    .heroText h1 {
+        font-family: Clean_light;
+        font-size: 40px;
+        letter-spacing: 2px;
+    }
+    
+    
+
+    .detailWindow {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.795);
+    }
+
+    .detailContent {
+        color: rgb(255, 255, 255);
+        background-color: rgb(8, 8, 8);
+        margin: 10% auto;
+        font-family: Clean_light;
+        padding: 15px;
+        border: 1px solid rgba(255, 255, 255, 0.445);
+        width: 80%;
+        display: grid;
+        grid-template-columns: 1fr ;
+        gap: 0px 0px;
+        opacity: 1;
+        animation-name: fadeInOpacity;
+        animation-iteration-count: 1;
+        animation-timing-function: ease-in;
+        animation-duration: 0.3s;
+        grid-template-areas:
+            "close"
+            "poster"
+            "info"
+            "trailer"
+    }
+
+    .info {
+        text-align: center;
+    }
+
+    .poster {
+        text-align: center;
+    }
+
+    .poster img {
+        max-width: 100%;
+
+    }
+
+    .trailer iframe {
+        border-style: none;
+        width: 100%;
+        height: 350px;
+    }
+
+  }
